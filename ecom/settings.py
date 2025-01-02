@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-e3w81tpdrbb&2*+k_dv+1qi)24=k&kq1ndvo4edhu7a!q*a)=8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost', '5f1f-75-76-180-162.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://5f1f-75-76-180-162.ngrok-free.app']
 
 # Application definition
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'cart',
     'store',
     'payment',
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# PayPal Stuff
+PAYPAL_TEST = True
+
+PAYPAL_RECEIVER_EMAIL = 'macaire@yahoo.com'
